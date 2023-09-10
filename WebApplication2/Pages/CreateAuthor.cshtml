@@ -1,0 +1,25 @@
+﻿@page
+@model WebApplication2.Pages.CreateAuthorModel
+@{
+}
+<h1 class="display-4">Внести автора в список</h1>
+<form method="post">
+    <div class="my-1">
+        <label asp-for="FirstName"></label>
+        <input class="form-control" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+
+    <div class="my-1">
+        <label asp-for="LastName"></label>
+        <input class="form-control" asp-for="LastName" />
+        <span asp-validation-for="LastName" ></span>
+    </div>
+    <div class="my-1">
+        <input class="date"  asp-for="BirthDate" />
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="Description" />
+    </div>
+    <button class="btn  btn-primary my-1" type="submit">Сохранить</button>
+</form>

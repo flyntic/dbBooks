@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplication2.Pages.EditAuthorModel
+@{
+}
+<h1 class="text-center">Edit author @Model.id</h1>
+
+<form method="post">
+    <div class="my-1">
+        <label asp-for="FirstName"></label>
+        <input class="form-control" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+
+    <div class="my-1">
+        <label asp-for="LastName"></label>
+        <input class="form-control" asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="BirthDate" />
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="Description" />
+    </div>
+    <input asp-page="EditAuthor" asp-page-handler="Update" asp-route-id="@Model.id" value="Сохранить" type="submit"/>
+</form>

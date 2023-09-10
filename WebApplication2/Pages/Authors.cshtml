@@ -1,0 +1,39 @@
+﻿@page
+@model AuthorsModel
+@{
+    ViewData["Title"] = "Authors";
+}
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Дата рождения</th>
+                <th>описание</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.Authors)
+            {
+                <tr>
+                    <td>@author.FirstName</td>
+                    <td>@author.LastName</td>
+                    <td>@author.Birthdate</td>
+                    <td>@author.Description</td>
+                    <td>
+                        <a asp-page="Index" asp-page-handler="Delete" asp-route-id="@author.Id" class="btn btn-danger">
+                            Delete
+                        </a>
+                        <form method="post">
+                            <input type="submit" value="Edit" asp-page="Authors" asp-page-handler="Edit" asp-route-id="@author.Id" />
+
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

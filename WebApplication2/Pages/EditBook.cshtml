@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplication2.Pages.EditBookModel
+@{
+}
+<h1 class="text-center">Edit book @Model.id</h1>
+
+<form method="post">
+    <div class="my-1">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="my-1">
+        <label asp-for="Price"></label>
+        <input class="form-control" asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="Author" />
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="PageCount" />
+    </div>
+    <input asp-page="EditBook" asp-page-handler="Update" asp-route-id="@Model.id" value="Сохранить" type="submit"/>
+</form>

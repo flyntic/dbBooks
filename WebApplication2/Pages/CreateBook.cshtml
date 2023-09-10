@@ -1,0 +1,25 @@
+﻿@page
+@model WebApplication2.Pages.CreateBookModel
+@{
+}
+<h1 class="display-4">Создать книгу</h1>
+<form method="post">
+    <div class="my-1">
+        <label asp-for="BookName"></label>
+        <input class="form-control" asp-for="BookName" />
+        <span asp-validation-for="BookName"></span>
+    </div>
+
+    <div class="my-1">
+        <label asp-for="BookPrice"></label>
+        <input class="form-control" asp-for="BookPrice" />
+        <span asp-validation-for="BookPrice" ></span>
+    </div>
+    <div class="my-1">
+        <input class="form-control"  asp-for="BookAuthor" />
+    </div>
+    <div class="my-1">
+        <input class="form-control" asp-for="Pages" />
+    </div>
+    <button class="btn  btn-primary my-1" type="submit">Создать</button>
+</form>
